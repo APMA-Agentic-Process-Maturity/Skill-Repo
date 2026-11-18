@@ -1,0 +1,282 @@
+{
+  "process": {
+    "name": "Haftpflicht-Schadenregulierung (komplex)",
+    "domain": "Schaden",
+    "owner": "Leiter Schaden Haftpflicht",
+    "assessor": "A. Stojanovic",
+    "date": "2026-11-04"
+  },
+  "gate": {
+    "G1": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G1-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G1-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "G2": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G2-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G2-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "G3": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G3-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G3-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "G4": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G4-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G4-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "G5": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G5-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G5-2 geprüft"
+      },
+      "3": {
+        "status": "erfuellt",
+        "evidence": "Artefakt G5-3 geprüft"
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    }
+  },
+  "process_dimensions": {
+    "P1": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P1-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P1-2 geprüft"
+      },
+      "3": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P1-3 geprüft"
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "P2": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P2-1 geprüft"
+      },
+      "2": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "P3": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P3-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P3-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "P4": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P4-1 geprüft"
+      },
+      "2": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "P5": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P5-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P5-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "P6": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P6-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P6-2 geprüft"
+      },
+      "3": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P6-3 geprüft"
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "P7": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P7-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P7-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    },
+    "P8": {
+      "1": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P8-1 geprüft"
+      },
+      "2": {
+        "status": "erfuellt",
+        "evidence": "Artefakt P8-2 geprüft"
+      },
+      "3": {
+        "status": "offen",
+        "evidence": ""
+      },
+      "4": {
+        "status": "offen",
+        "evidence": ""
+      }
+    }
+  },
+  "ko": {
+    "K1": false,
+    "K2": false,
+    "K3": false,
+    "K4": false,
+    "K5": true,
+    "K6": false,
+    "K7": false
+  },
+  "value": {
+    "V1": {
+      "weight": 1.0,
+      "score": 2
+    },
+    "V2": {
+      "weight": 1.0,
+      "score": 4
+    },
+    "V3": {
+      "weight": 1.0,
+      "score": 3
+    },
+    "V4": {
+      "weight": 1.0,
+      "score": 4
+    },
+    "V5": {
+      "weight": 1.0,
+      "score": 4
+    }
+  },
+  "thresholds": {
+    "maturity": 2,
+    "value": 3.0
+  }
+}

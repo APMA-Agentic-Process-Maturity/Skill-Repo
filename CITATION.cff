@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Wenn Sie diese Methodik oder dieses Skill-Paket verwenden, zitieren Sie bitte das Working Paper."
+title: "APMA Skill: Agentic Process Maturity Assessment"
+version: "1.0"
+date-released: "2026-11-05"
+authors:
+  - family-names: Stojanovic
+    given-names: Aleksandar
+    affiliation: "Sopra Steria Next Germany"
+    email: aleks@neonbridges.com
+license: "CC-BY-4.0 AND MIT"
+preferred-citation:
+  type: report
+  title: "Agentic Process Maturity Assessment (APMA): Ein Reifegradmodell zur Bestimmung vertretbarer Autonomiestufen für KI-Agenten in Geschäftsprozessen"
+  authors:
+    - family-names: Stojanovic
+      given-names: Aleksandar
+      affiliation: "Sopra Steria Next Germany"
+  year: 2026
+  month: 11
+  institution:
+    name: "Sopra Steria Next Germany"
+  notes: "Working Paper, Version 1.0"

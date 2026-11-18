@@ -1,0 +1,505 @@
+{
+  "name": "APMA",
+  "version": "1.0",
+  "autonomy_levels": [
+    {
+      "level": 0,
+      "label": "A0 Nicht bereit",
+      "agent": "wird nicht eingesetzt",
+      "human": "arbeitet am Prozess"
+    },
+    {
+      "level": 1,
+      "label": "A1 Assistiert",
+      "agent": "recherchiert, bereitet vor, schlägt vor",
+      "human": "führt jede Handlung selbst aus"
+    },
+    {
+      "level": 2,
+      "label": "A2 Überwacht",
+      "agent": "führt aus",
+      "human": "gibt jede Handlung oder jeden Batch frei"
+    },
+    {
+      "level": 3,
+      "label": "A3 Autonom mit Monitoring",
+      "agent": "führt aus",
+      "human": "sieht Ausnahmen und Stichproben, kann stoppen"
+    },
+    {
+      "level": 4,
+      "label": "A4 Delegiert",
+      "agent": "betreibt und verbessert den Prozess in Leitplanken",
+      "human": "steuert über Ziele, Budgets und Limits"
+    }
+  ],
+  "gate_dimensions": [
+    {
+      "id": "G1",
+      "name": "Führung und Risikoappetit",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Die Geschäftsführung hat KI-Assistenz als Thema anerkannt und ein Pilotbudget freigegeben. Ein Sponsor ist benannt. Es gibt noch keine Position zu Autonomiegrenzen.",
+          "evidence": "Benannter Sponsor; dokumentiertes Pilotbudget"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Ein Mitglied der Geschäftsleitung verantwortet agentische KI. Es ist entschieden, welche Handlungsklassen Agenten unter menschlicher Freigabe ausführen dürfen. Die Haftung für Agentenhandlungen ist einer Rolle zugeordnet.",
+          "evidence": "Beschluss der Geschäftsleitung mit Delegationsgrenzen; Haftungszuordnung"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Es gibt eine explizite Autonomie-Policy: welche Entscheidungstypen ohne Einzelfreigabe delegiert werden dürfen, mit Schwellenwerten (Betrag, Reichweite, Reversibilität). Der Risikoappetit für Fehlhandlungen ist quantifiziert.",
+          "evidence": "Autonomie-Policy mit Schwellenwerten; Risikoappetit-Statement"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Autonomiestufen sind Teil von Strategie und Zielplanung. Budget und Ziele werden nach Autonomiegrad geplant. Die Geschäftsleitung steuert agentische Prozesse über Ziele und Leitplanken, nicht über Einzelfreigaben.",
+          "evidence": "Strategie-/Planungsdokument mit Autonomiezielen je Prozessdomäne"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "KI-Governance",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Es gibt Nutzungsregeln für generative KI (zulässige Daten, freigegebene Tools). Eine Stelle ist für KI-Fragen ansprechbar.",
+          "evidence": "KI-Nutzungsrichtlinie; benannte Anlaufstelle"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Ein Freigabeprozess für Agenten existiert: Use-Case-Registrierung, Risikoeinstufung nach EU AI Act, Datenschutzprüfung. Human-Oversight-Anforderungen sind je Risikoklasse definiert.",
+          "evidence": "Use-Case-Register; Freigabeprozess; Oversight-Anforderungen je Risikoklasse"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Das Modellrisikomanagement deckt Agenten ab: Tests vor Freigabe, Monitoring im Betrieb, Vorfallsmanagement mit Meldewegen, periodische Re-Zertifizierung. Audit-Trail ist Pflicht. Orientierung an ISO/IEC 42001.",
+          "evidence": "MRM-Richtlinie mit Agentenkapitel; Vorfallsprozess; Audit-Nachweise"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Governance ist in das Managementsystem integriert (ISO/IEC 42001 oder äquivalent) und regelt auch Änderungen an Agentenkonfiguration (Prompts, Tools, Policies) über Change-Kontrolle.",
+          "evidence": "Zertifikat oder Audit; Change-Control-Prozess für Agentenkonfiguration"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Daten- und Plattformbasis",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Mitarbeitende haben Zugang zu einer freigegebenen LLM-Plattform. Unternehmensdaten sind für lesende Abfragen (Suche, RAG) erschlossen.",
+          "evidence": "Plattformfreigabe; Datenzugangskonzept (lesend)"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Kernsysteme bieten APIs oder stabile Integrationspunkte für Schreibzugriffe. Es gibt ein Identitäts- und Rechtemodell für nicht-menschliche Akteure (Service-Identitäten, Least Privilege). Agentenhandlungen werden geloggt.",
+          "evidence": "API-Katalog; IAM-Konzept für Agenten; Logging-Nachweis"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Zentrale Observability für Agenten (Traces, Kosten, Qualitätsmetriken), zentrale Tool-/Policy-Registry, Sandbox für Testläufe. Daten der Kernprozesse sind strukturiert und qualitätsgesichert.",
+          "evidence": "Observability-Plattform; Tool-Registry; Datenqualitätsreports"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Agentenplattform als Produkt mit SLAs, Mandantentrennung, Kostenattribution je Prozess und automatisierter Evaluation vor jedem Release.",
+          "evidence": "Plattform-SLA; Evaluations-Pipeline"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "Fähigkeiten und Betriebsmodell",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Einzelne Personen bauen Prototypen. Es gibt keinen definierten Betrieb für Agenten.",
+          "evidence": "Prototyp-Inventar"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Ein Team kann Agenten bauen, testen und in Produktion bringen. Der Betrieb folgt dem Software-Betriebsprozess (Deployment, Incident, Rollback).",
+          "evidence": "Teamstruktur; Betriebshandbuch für Agenten"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "AgentOps-Fähigkeit: Evaluationsdesign, Versionierung von Prompts und Policies, Drift-Monitoring, Kostensteuerung. Fachbereiche verfügen über geschulte Agenten-Supervisoren.",
+          "evidence": "Rollenprofile; Schulungsnachweise; Evaluations-Suites"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Agentenentwicklung ist Kernkompetenz. Fachbereiche konfigurieren Agenten im Rahmen zentraler Leitplanken selbst.",
+          "evidence": "Self-Service-Framework; Kompetenzmatrix"
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "Kultur",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Offenheit gegenüber KI-Assistenz, aber Skepsis gegenüber maschinellen Entscheidungen. Fehlertoleranz ist nicht thematisiert.",
+          "evidence": "Mitarbeiterbefragung oder Interviewprotokolle"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Fachbereiche akzeptieren, dass Agenten Handlungen vorbereiten und unter Freigabe ausführen. Agentenfehler werden als Lernfälle behandelt, nicht als Projektabbruch. Mitbestimmung ist eingebunden.",
+          "evidence": "Vereinbarung mit Mitbestimmung; dokumentierte Fehlerkultur-Regelung"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Mitarbeitende geben Kontrolle an Agenten ab, wenn Monitoring vorhanden ist. Die Rollenveränderung (vom Bearbeiter zum Supervisor) ist akzeptiert und durch Personalentwicklung gestützt.",
+          "evidence": "Rollenkonzepte; Change-Programm"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Zusammenarbeit mit Agenten ist Normalität. Mitarbeitende schlagen aktiv Delegation vor und bewerten Agentenleistung kritisch.",
+          "evidence": "Vorschlagsquote; Reviews aus dem Fachbereich"
+        }
+      ]
+    }
+  ],
+  "process_dimensions": [
+    {
+      "id": "P1",
+      "name": "Prozessdefinition und Stabilität",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Der Prozess ist benannt; Start, Ende und Hauptschritte sind beschrieben. Varianten sind nicht gezählt.",
+          "evidence": "Prozessbeschreibung (mindestens Skizze)"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Der Prozess ist end-to-end dokumentiert (Schritte, Rollen, Systeme, Inputs/Outputs). Varianten sind erfasst; die Hauptvariante deckt den Großteil des Volumens ab. Der Prozess ändert sich selten (Richtwert: nicht öfter als quartalsweise).",
+          "evidence": "Prozessmodell; Variantenliste mit Volumenanteil; Änderungshistorie"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Der Prozess ist standardisiert. Entscheidungsregeln und Datenobjekte sind formal beschrieben (z. B. BPMN/DMN). Änderungen laufen über ein Change-Verfahren mit Versionierung.",
+          "evidence": "Versioniertes Prozess- und Entscheidungsmodell; Change-Log"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Der Prozess liegt als maschinenlesbare Spezifikation vor, die Agent und Mensch gleichermaßen nutzen. Änderungen werden vor Produktivsetzung getestet oder simuliert.",
+          "evidence": "Maschinenlesbare Spezifikation; Testprotokolle für Prozessänderungen"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Entscheidungsstruktur",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Die Entscheidungspunkte im Prozess sind benannt. Für jeden ist bekannt, ob er regelbasiert, musterbasiert oder Ermessen ist.",
+          "evidence": "Entscheidungsinventar"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Die Entscheidungskriterien sind explizit beschrieben (auch für Ermessen: Faktoren, Beispiele). Handlungen sind in reversibel/irreversibel klassifiziert. Fehlerkosten je Entscheidungstyp sind geschätzt.",
+          "evidence": "Entscheidungskatalog mit Kriterien, Reversibilität und Fehlerkosten"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Für delegierte Entscheidungen gibt es Schwellenwerte (Betrag, Konfidenz, Kundentyp), oberhalb derer eskaliert wird. Die Entscheidungsqualität ist am Menschen gemessen. Ein Rückabwicklungspfad für Fehlhandlungen existiert.",
+          "evidence": "Schwellenwertmatrix; Baseline der Entscheidungsqualität; Rückabwicklungsverfahren"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Die Entscheidungslogik wird aus Ergebnissen fortlaufend nachjustiert (unter Change-Kontrolle). Der Prozess toleriert Einzelfehler, weil Aggregatkontrollen (Stichproben, Limits) greifen.",
+          "evidence": "Kontrollkonzept auf Aggregatebene; Nachweise der Nachjustierung"
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Daten und Systemzugang",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Inputs liegen digital vor (auch unstrukturiert: E-Mail, PDF). Der Agent erreicht die relevanten Systeme lesend.",
+          "evidence": "Datenflussdiagramm; nachgewiesener Lesezugang"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Zielsysteme sind per API oder stabiler Schnittstelle schreibbar. Der Agent handelt unter eigener Identität mit minimalen Rechten; jede Schreibaktion ist ihm zuordenbar.",
+          "evidence": "API-Zugang; Service-Identität; Rechtekonzept"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Strukturierte Daten sind qualitätsgesichert (Vollständigkeit, Aktualität). Unstrukturierte Inputs werden mit gemessener Extraktionsgüte verarbeitet. Eine Testumgebung mit realistischen Daten existiert.",
+          "evidence": "Datenqualitätsmetriken; Extraktionsgüte; Testumgebung"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Alle Prozessschritte sind über Schnittstellen erreichbar, keine Medienbrüche. Der Agent kann Zustand und Historie eines Falls vollständig lesen.",
+          "evidence": "Schnittstellenabdeckung 100 %; Falldatenmodell"
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Ausnahmebehandlung",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Es ist bekannt, dass Ausnahmen vorkommen; typische Fälle können benannt werden.",
+          "evidence": "Liste typischer Ausnahmen"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Die Ausnahmequote ist gemessen, Ausnahmetypen sind kategorisiert. Je Kategorie ist eine Eskalationsrolle benannt. Der Agent hat eine definierte Stop-and-ask-Regel.",
+          "evidence": "Ausnahmestatistik; Eskalationsmatrix; Stop-Regel"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Ausnahmepfade sind dokumentiert und teilweise automatisiert. Eskalationen haben SLAs. Der Agent erkennt Unsicherheit (Konfidenz, fehlende Daten) und eskaliert systematisch statt zu raten.",
+          "evidence": "Dokumentierte Ausnahmepfade; Eskalations-SLA; Unsicherheitsregeln"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Ausnahmen werden analysiert und fließen in Prozess- und Agentenverbesserung zurück. Der Anteil manueller Ausnahmen sinkt messbar.",
+          "evidence": "Ausnahmen-Review-Zyklus; Trendkennzahl"
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "Observability und Bewertbarkeit",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Grundlegende Mengen- und Durchlaufzeitkennzahlen existieren.",
+          "evidence": "Kennzahlenblatt"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Outcome-Kennzahlen (Qualität, Fehler, Nacharbeit, Kundenwirkung) sind definiert und als menschliche Baseline gemessen. Jede Agentenhandlung ist geloggt und nachvollziehbar.",
+          "evidence": "Baseline-Messung; Logs"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Die Agentenleistung wird kontinuierlich gegen die Baseline gemessen. Stichprobenprüfung ist etabliert, Drift wird erkannt. Der Prozess-Owner hat ein Dashboard.",
+          "evidence": "Monitoring-Dashboard; Stichprobenverfahren; Drift-Alarme"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Automatisierte Evaluation (Testsets, Regressionstests) vor jeder Änderung. Prozesskennzahlen fließen in die strategische Steuerung.",
+          "evidence": "Evaluations-Suite; Regressionsnachweise"
+        }
+      ]
+    },
+    {
+      "id": "P6",
+      "name": "Ownership und Haftung",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Eine Person fühlt sich für den Prozess verantwortlich, ohne formalen Auftrag.",
+          "evidence": "Benennung"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Formaler Prozess-Owner mit Mandat. Es ist festgelegt, wer für Agentenhandlungen die Verantwortung trägt und wer freigibt.",
+          "evidence": "Rollenbeschreibung Owner; RACI für Agentenhandlungen"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Der Owner hat Autorität über Prozessänderungen und die unterstützenden IT-Systeme sowie Budgeteinfluss. Er kann den Agenten jederzeit stoppen; der Stop ist getestet.",
+          "evidence": "Mandat; Stop-Berechtigung; Protokoll eines Stop-Tests"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Der Owner steuert den Prozess über Ziele und Leitplanken für den Agenten und ist Teil der Agenten-Governance des Unternehmens.",
+          "evidence": "Zielvereinbarung Prozess/Agent; Gremienmitgliedschaft"
+        }
+      ]
+    },
+    {
+      "id": "P7",
+      "name": "Risiko und Regulatorik",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Grobe Einschätzung liegt vor: Datenschutzrelevanz, regulierte Tätigkeit ja/nein.",
+          "evidence": "Kurzcheck"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "AI-Act-Einstufung durchgeführt; Datenschutz-Folgenabschätzung falls erforderlich. Der Blast Radius einer Fehlhandlung ist beschrieben (Betrag, Kundenzahl, Reputation). Freigabe durch Compliance und Datenschutz liegt vor.",
+          "evidence": "AI-Act-Einstufung; DSFA; Risikobewertung; Freigabe"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Für Hochrisiko oder regulierte Tätigkeiten: Human-Oversight-Konzept gemäß Anforderungen, revisionssicherer Audit-Trail, Limits technisch durchgesetzt (nicht nur organisatorisch).",
+          "evidence": "Oversight-Konzept; revisionssicheres Logging; technische Limits"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Laufende Konformitätsprüfung, periodische Audits, Nachweise für Aufsicht kurzfristig verfügbar.",
+          "evidence": "Audit-Berichte; Konformitätsdossier"
+        }
+      ]
+    },
+    {
+      "id": "P8",
+      "name": "Mitarbeiter",
+      "levels": [
+        {
+          "level": 1,
+          "label": "A1 Assistiert",
+          "requirement": "Mitarbeitende kennen den Prozess und nutzen KI-Assistenz punktuell.",
+          "evidence": "Nutzungsnachweis"
+        },
+        {
+          "level": 2,
+          "label": "A2 Überwacht",
+          "requirement": "Mitarbeitende können Agentenvorschläge bewerten und korrigieren. Sie wissen, wann sie freigeben dürfen und wann nicht. Die Rollenveränderung ist kommuniziert.",
+          "evidence": "Schulungsnachweis; Freigaberichtlinie; Quote abgelehnter oder geänderter Agentenvorschläge (liegt sie nahe null, wird durchgewunken: Automation Bias, Art. 14 Abs. 4 lit. b KI-VO)"
+        },
+        {
+          "level": 3,
+          "label": "A3 Autonom mit Monitoring",
+          "requirement": "Supervisor-Rolle etabliert: Mitarbeitende überwachen Agenten über Dashboards, prüfen Stichproben, bearbeiten Eskalationen. Zeitanteile sind neu geregelt.",
+          "evidence": "Rollenprofil Supervisor; Stellenanpassung; Schulung; Befundquote der Stichprobenprüfung"
+        },
+        {
+          "level": 4,
+          "label": "A4 Delegiert",
+          "requirement": "Mitarbeitende konfigurieren und verbessern Agenten im Rahmen der Leitplanken selbst und schlagen Delegation weiterer Teilaufgaben vor.",
+          "evidence": "Verbesserungsvorschläge; Self-Service-Nutzung"
+        }
+      ]
+    }
+  ],
+  "ko_criteria": [
+    {
+      "id": "K1",
+      "text": "Kein Schreibzugang auf die Zielsysteme möglich",
+      "cap": 1
+    },
+    {
+      "id": "K2",
+      "text": "Kein formaler Prozess-Owner",
+      "cap": 1
+    },
+    {
+      "id": "K3",
+      "text": "Keine gemessene Baseline der menschlichen Leistung",
+      "cap": 2
+    },
+    {
+      "id": "K4",
+      "text": "AI-Act-Hochrisiko ohne Human-Oversight-Konzept",
+      "cap": 2
+    },
+    {
+      "id": "K5",
+      "text": "Irreversible Handlungen ohne Rückabwicklungspfad",
+      "cap": 2
+    },
+    {
+      "id": "K6",
+      "text": "Rechtliches Verbot vollautomatisierter Entscheidung ohne anwendbare Ausnahme (z. B. Art. 22 DSGVO)",
+      "cap": 2
+    },
+    {
+      "id": "K7",
+      "text": "Verwaltungsakt ohne Rechtsvorschrift, die den vollautomatisierten Erlass zulässt, oder mit Ermessen bzw. Beurteilungsspielraum (§ 35a VwVfG; entsprechend § 155 Abs. 4 AO, § 31a SGB X)",
+      "cap": 2
+    }
+  ],
+  "value_criteria": [
+    {
+      "id": "V1",
+      "name": "Volumen / Frequenz",
+      "default_weight": 1.0,
+      "scale": "1 = selten, 5 = täglich hohe Fallzahl"
+    },
+    {
+      "id": "V2",
+      "name": "FTE-Bindung",
+      "default_weight": 1.0,
+      "scale": "1 = marginal, 5 = mehrere FTE"
+    },
+    {
+      "id": "V3",
+      "name": "Durchlaufzeit-Hebel",
+      "default_weight": 1.0,
+      "scale": "1 = kein Zeitdruck, 5 = Durchlaufzeit geschäftskritisch"
+    },
+    {
+      "id": "V4",
+      "name": "Fehler- und Nacharbeitskosten",
+      "default_weight": 1.0,
+      "scale": "1 = vernachlässigbar, 5 = hoch; gemeint sind die Fehler- und Nacharbeitskosten des heutigen, menschlich ausgeführten Prozesses, nicht das Schadenspotenzial eines Agentenfehlers (das bewerten P4 und P7)"
+    },
+    {
+      "id": "V5",
+      "name": "Schmerzgrad / Priorität im Fachbereich",
+      "default_weight": 1.0,
+      "scale": "1 = kein Druck, 5 = Top-Thema"
+    }
+  ],
+  "portfolio_thresholds": {
+    "maturity": 2,
+    "value": 3.0
+  },
+  "portfolio_note": "Erst Prozessarbeit ist kein Verbot: Liegt der Prozess auf A1, läuft parallel ein Copilot-Einsatz auf A1 als Lernpfad, während die Gap-Liste abgearbeitet wird.",
+  "gap_rule": "Die Gap-Liste enthält alle nicht erfüllten Zellen der Stufe A+1 in Prozess- und Gate-Dimensionen sowie alle wirksamen K.O.-Kriterien, deren Cap gleich A ist. Ohne den K.O.-Anteil wäre die Liste leer, wenn allein ein K.O.-Kriterium die Stufe deckelt."
+}
