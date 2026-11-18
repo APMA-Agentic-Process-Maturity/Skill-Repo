@@ -1,13 +1,9 @@
-APMA Skill: Agentic Process Maturity Assessment
-Copyright (c) 2026 Aleksandar Stojanovic
-
-Methodik, Stufentexte, Referenzdokumente und Vorlagen (SKILL.md, reference/, templates/, examples/):
-Creative Commons Attribution 4.0 International (CC BY 4.0).
-https://creativecommons.org/licenses/by/4.0/
-Namensnennung: "APMA, Stojanovic (2026)" mit Verweis auf das Working Paper.
-
-Skripte (scripts/):
 MIT License
+
+Copyright (c) 2026 Aleksandar Stojanovic and contributors, Sopra Steria Next Germany
+
+Applies to scripts/ and all source code in this repository. Methodology, level texts,
+reference documents and templates are licensed under CC BY 4.0, see LICENSE-CONTENT.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

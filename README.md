@@ -51,10 +51,16 @@ Autonomiestufe statt Score · Gate deckelt Prozess · Gating innerhalb jeder Dim
 
 Version 1.0, November 2026. Design-Science-Artefakt, empirische Validierung ausstehend (Agenda im Paper). Ein unabhängig und zeitgleich entstandenes prozessorientiertes Readiness-Framework (Schmidt, Alt, Zimmermann, HICSS 2026) ist in `reference/paper_summary.md` abgegrenzt. Stufentexte und Caps sind kalibrierbar; Änderungen am Modell bitte nur in `reference/apma_model.json` und per `scripts/build_workbook.py` nachziehen.
 
+## Autorinnen und Autoren
+
+Hauptautor ist Aleksandar Stojanovic (Head of AI, Sopra Steria Next Germany, aleks_stojanovic@icloud.com). Zahlreiche Co-Autorinnen und Co-Autoren aus dem KI-Team von Sopra Steria Next Germany haben an Review, Kalibrierung, Beispielen und Werkzeugen mitgewirkt; die namentliche Liste steht in `CONTRIBUTORS.md`. Das Repository wird von Sopra Steria Next Germany gepflegt: https://github.com/APMA-Agentic-Process-Maturity/Skill-Repo
+
 ## Zitieren
 
-Siehe `CITATION.cff`.
+Stojanovic, A. und Mitwirkende, Sopra Steria Next Germany (2026). APMA Skill: Agentic Process Maturity Assessment, Version 1.1. https://github.com/APMA-Agentic-Process-Maturity/Skill-Repo
+
+Für die Methodik bitte das Working Paper zitieren, siehe `CITATION.cff` (Feld `preferred-citation`).
 
 ## Lizenz
 
-CC BY 4.0 für Methodik und Texte, MIT für Skripte. Siehe `LICENSE`.
+MIT für Skripte (`LICENSE`), CC BY 4.0 für Methodik, Stufentexte, Referenzdokumente und Vorlagen (`LICENSE-CONTENT`). Namensnennung: "APMA, Stojanovic et al., Sopra Steria Next (2026)".

@@ -1,13 +1,15 @@
 cff-version: 1.2.0
 message: "Wenn Sie diese Methodik oder dieses Skill-Paket verwenden, zitieren Sie bitte das Working Paper."
 title: "APMA Skill: Agentic Process Maturity Assessment"
-version: "1.0"
-date-released: "2026-11-05"
+version: "1.1"
+date-released: "2026-11-18"
 authors:
   - family-names: Stojanovic
     given-names: Aleksandar
     affiliation: "Sopra Steria Next Germany"
-    email: aleks@neonbridges.com
+    email: aleks_stojanovic@icloud.com
+  - name: "Mitwirkende des KI-Teams von Sopra Steria Next Germany (siehe CONTRIBUTORS.md)"
+repository-code: "https://github.com/APMA-Agentic-Process-Maturity/Skill-Repo"
 license: "CC-BY-4.0 AND MIT"
 preferred-citation:
   type: report
@@ -16,6 +18,7 @@ preferred-citation:
     - family-names: Stojanovic
       given-names: Aleksandar
       affiliation: "Sopra Steria Next Germany"
+      email: aleks_stojanovic@icloud.com
   year: 2026
   month: 11
   institution:
